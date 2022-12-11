@@ -23,6 +23,9 @@ find_package(SailC++ CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 find_package(yaml-cpp CONFIG REQUIRED)
 
+# OPEN DYNAMICS LIBRARY - PHYSICS ENGINE
+find_package(ode CONFIG REQUIRED) 
+
 target_link_libraries(${PROJECT_NAME}
         PUBLIC
         GLEW::GLEW
@@ -36,6 +39,7 @@ target_link_libraries(${PROJECT_NAME}
         yaml-cpp
         EnTT::EnTT
         assimp::assimp
+        ODE::ODE
 )
 
 target_precompile_headers(${PROJECT_NAME} PUBLIC "include/pch.h")
